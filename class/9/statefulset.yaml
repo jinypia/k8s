@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: appjs
+spec:
+  serviceName: appjs
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hpe
+    spec:
+      containers:
+      - image: smlinux/app-pet
+        name: appjs
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: data
+          mountPath: /var/data
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      resources:
+        requests:
+          storage: 10Mi
+      accessModes:
+      - ReadWriteOnce
+

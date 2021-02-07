@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mds
+spec:
+  containers:
+  - image: smlinux/fortune
+    name: mds
+    volumeMounts:
+    - name: servicenow
+      mountPath: /servicenow
+    ports:
+    - containerPort: 80
+      protocol: TCP
+  volumes:
+  - name: servicenow
+    hostPath: 
+      path: /Users/superarchi/ServiceNow
+      type: Directory

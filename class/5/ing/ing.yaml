@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ing-svc
+spec:
+  rules:
+  - host: node2.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nodeinfo
+          servicePort: 80
+      - path: /app
+        backend:
+          serviceName: app-service
+          servicePort: 80

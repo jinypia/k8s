@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-v1
+  labels:
+    app: hpe
+    version: stable
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hpe
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: hpe
+        version: stable
+    spec:
+      containers:
+      - name: testapp
+        image: smlinux/app:v1
+        ports:
+        - containerPort: 8080

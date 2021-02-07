@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-v2
+  labels:
+    app: hpe
+    version: canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpe
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: hpe
+        version: canary
+    spec:
+      containers:
+      - name: testapp
+        image: smlinux/app:v2
+        ports:
+        - containerPort: 8080

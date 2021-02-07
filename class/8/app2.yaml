@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: app2
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hpe
+    spec:
+      containers:
+      - image: smlinux/app:v2
+        name: nodejs
+        ports:
+        - containerPort: 8080

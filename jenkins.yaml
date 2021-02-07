@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins
+spec:
+  containers:
+  - image: jenkins/jenkins
+    name: jenkins
+    volumeMounts:
+    - name: jenkins
+      mountPath: /jenkins
+    ports:
+    - containerPort: 80
+      protocol: TCP
+  volumes:
+  - name: jenkins
+    hostPath: 
+      path: /Users/superarchi/k8s/jenkins
+      type: Directory
