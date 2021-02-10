@@ -1,0 +1,10 @@
+total 57408
+drwxr-xr-x 1 sua sua      512 Feb  8 08:07 .
+drwxr-xr-x 1 sua sua      512 Feb  8 07:53 ..
+drwxr-xr-x 1 sua sua      512 Feb  8 08:06 .git
+drwxr-xr-x 1 sua sua      512 Feb  8 07:52 class
+-rw-r--r-- 1 sua sua        0 Feb  8 08:07 createdonmywsl.txt
+-rw-r--r-- 1 sua sua      343 Feb  8 07:52 jenkins.yaml
+-rw-r--r-- 1 sua sua      343 Feb  8 07:52 mds.yaml
+-rw-r--r-- 1 sua sua       22 Feb  8 07:53 testfile1.txt
+-rw-r--r-- 1 sua sua 58777600 Feb  8 07:52 yaml.tar
